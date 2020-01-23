@@ -17,6 +17,7 @@ public class BabyMonitorSimple implements Observer {
 	}
 
 
+	//pull model
 	@Override
 	public void update(Observable obs, Object arg) {
 		if (obs instanceof Baby) {
@@ -30,7 +31,7 @@ public class BabyMonitorSimple implements Observer {
 
 	public void display() {
 		if (crying) {
-			System.out.println("Monitor:"+ monitorName + " baby: " + babyName + " is crying at level: " + level);
+			System.out.println("Monitor:"+ monitorName + " baby is crying");
 		}
 	}
 }
