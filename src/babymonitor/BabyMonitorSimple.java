@@ -1,29 +1,36 @@
 package babymonitor;
 
-public class BabyMonitorSimple implements Observer {
+import java.util.Observable;
+import java.util.Observer;
 
-	private Subject mdata;
-	private String name;
+public class BabyMonitorSimple implements Observer {
+	Observable observable;
 	private boolean crying;
-	
-	public BabyMonitorSimple(String location, Baby d) {
-		this.mdata=d;
-		this.name=location;
-		mdata.registerObserver(this);
+	private int level;
+	private String monitorName;
+	private String babyName;
+
+	public BabyMonitorSimple(String name,Observable observable) {
+		this.monitorName = name;
+		this.observable = observable;
+		observable.addObserver(this);
 	}
-		
-	public void display() {
-		if (crying) {
-			System.out.println("Monitor:" + name + " baby is crying");
+
+
+	@Override
+	public void update(Observable obs, Object arg) {
+		if (obs instanceof Baby) {
+			Baby baby = (Baby)obs;
+			this.babyName = baby.getName();
+			this.crying = baby.getCrying();
+			this.level = baby.getLevel();
+			display();
 		}
 	}
-	
-	public void turnOff() {
-		mdata.removeObserver(this);
-	}
 
-	public void update(String name, boolean crying, int level) {
-		this.crying=crying;
-		display();
+	public void display() {
+		if (crying) {
+			System.out.println("Monitor:"+ monitorName + " baby: " + babyName + " is crying at level: " + level);
+		}
 	}
 }
