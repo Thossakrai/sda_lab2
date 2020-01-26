@@ -1,8 +1,10 @@
+package GuitarHero;
+
 public class GameCharacterSlash extends GameCharacter {
 
 	public GameCharacterSlash() {
 		 guitarBehavior=new Guitar_Telecaster();
-		 soloBehavior=new Solo_PutGuitarOnFire();
+		 soloBehavior=new Solo_SmashGuitar();
 	}
 	
 	public void change() {

@@ -1,3 +1,4 @@
+package GuitarHero;
 
 public abstract class GameCharacter {
 	GuitarBehavior guitarBehavior;

@@ -1,3 +1,4 @@
+package GuitarHero;
 
 public class Solo_JumpOffStage implements SoloBehavior {
 

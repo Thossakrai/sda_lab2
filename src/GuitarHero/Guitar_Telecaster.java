@@ -1,3 +1,4 @@
+package GuitarHero;
 
 public class Guitar_Telecaster implements GuitarBehavior {
 
