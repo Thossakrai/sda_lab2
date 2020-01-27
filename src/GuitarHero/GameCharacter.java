@@ -3,6 +3,7 @@ package GuitarHero;
 public abstract class GameCharacter {
 	GuitarBehavior guitarBehavior;
 	SoloBehavior   soloBehavior;
+	protected String name;
 	
 	public GameCharacter() {
 	}
@@ -23,5 +24,9 @@ public abstract class GameCharacter {
 	}
 	
 	public void change() {
+	}
+
+	public String getName(){
+		return name;
 	}
 }
